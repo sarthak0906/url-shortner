@@ -1,17 +1,4 @@
-<p align="center"><a href="https://kutt.it" title="kutt.it"><img src="https://raw.githubusercontent.com/thedevs-network/kutt/9d1c873897c3f5b9a1bd0c74dc5d23f2ed01f2ec/static/images/logo-github.png" alt="Kutt.it"></a></p>
-
-# Kutt.it
-
-**Kutt** is a modern URL shortener with support for custom domains. Shorten URLs, manage your links and view the click rate statistics.
-
 *Contributions and bug reports are welcome.*
-
-[https://kutt.it](https://kutt.it)
-
-[![Build Status](https://travis-ci.org/thedevs-network/kutt.svg?branch=develop)](https://travis-ci.org/thedevs-network/kutt)
-[![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/thedevs-network/kutt/#contributing)
-[![GitHub license](https://img.shields.io/github/license/thedevs-network/kutt.svg)](https://github.com/thedevs-network/kutt/blob/develop/LICENSE)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/thedevs-network/kutt/.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fthedevs-network%2Fkutt%2F)
 
 ## Table of Contents
 * [Key Features](#key-features)
@@ -40,27 +27,17 @@
 * Next (Universal/server-side rendered React)
 * Redux (State management)
 * styled-components (CSS styling solution library)
-* Recharts (Chart library)
 * Neo4j (Graph database)
 
 ## Setup
-You need to have [Node.js](https://nodejs.org/), [Neo4j](https://neo4j.com/) and [Redis](https://redis.io/) installed on your machine.
+You need to have [Node.js](https://nodejs.org/) and [Neo4j](https://neo4j.com/) installed on your machine.
 
-1. Clone this repository or [download zip](https://github.com/thedevs-network/kutt/archive/develop.zip).
-2. Copy `config.example.js` to `config.js` in both server and client folders and fill them properly.
+1. Clone this repository 
+2. Rename `config.example.js` to `config.js` in both server and client folders and fill them properly.
 3. Install dependencies: `npm install`.
-4. Start Neo4j database.
+4. Start Neo4j database and properly fill the login data in config files.
 5. Run for development: `npm run dev`.
 6. Run for production: `npm run build` then `npm start`.
-
-**[Visis our wiki for a more complete setup and development guide.](https://github.com/thedevs-network/kutt/wiki/Setup-and-deployment)**
-
-**Docker:** You can use Docker to run the app. Read [docker-examples](/docker-examples) for more info.
-
-## Browser Extensions
-Download Kutt's extension for web browsers via below links. You can also find the source code on [kutt-extension](https://github.com/abhijithvijayan/kutt-extension).
-* [Chrome](https://chrome.google.com/webstore/detail/kutt/pklakpjfiegjacoppcodencchehlfnpd)
-* [Firefox](https://addons.mozilla.org/en-US/firefox/addon/kutt/)
 
 ## API
 In addition to the website, you can use these APIs to create, delete and get URLs.
@@ -74,7 +51,7 @@ URL {
   target {string} Where the URL will redirect to
   password {boolean} Whether or not a password is required
   count {number} The amount of visits to this URL
-  shortUrl {string} The shortened link (Usually https://kutt.it/id)
+  shortUrl {string} The shortened link (Usually https://localhost:3000/id for server running on localhost), This can be changed by changing the default domain in config folder.
 }
 ```
 
@@ -117,22 +94,8 @@ GET /api/url/stats
 Body (or query for GET request)
   * `id`: ID of the shortened URL.
   * `domain` (optional):  Required if a custom domain is used for short URL.
-  
-## ShareX
-You can use Kutt as your default URL shortener in [ShareX](https://getsharex.com/). If you host your custom instance of Kutt, refer to [ShareX wiki](https://github.com/thedevs-network/kutt/wiki/ShareX) on how to setup.
-
-## 3rd Party API packages
-| Language  | Link                                                       | Description                                       |
-|-----------|------------------------------------------------------------|---------------------------------------------------|
-| C# (.NET) | [KuttSharp](https://github.com/0xaryan/KuttSharp)          | .NET package for Kutt.it url shortener            |
-| Python    | [kutt-cli](https://github.com/univa64/kutt-cli)            | Command-line client for Kutt written in Python    |
-| Ruby      | [kutt.rb](https://github.com/univa64/kutt.rb)              | Kutt library written in Ruby                      |
-| Node.js   | [node-kutt](https://github.com/ardalanamini/node-kutt)     | Node.js client for Kutt.it url shortener          |
-| Bash      | [kutt-bash](https://git.nixnet.xyz/caltlgin/kutt-bash)     | Simple command line program for Kutt              |
 
 ## Contributing
 Pull requests are welcome. You'll probably find lots of improvements to be made.
 
 Open issues for feedback, requesting features, reporting bugs or discussing ideas.
-
-Special thanks to [Thomas](https://github.com/trgwii) and [Muthu](https://github.com/MKRhere). Logo design by [Muthu](https://github.com/MKRhere).
