@@ -100,7 +100,7 @@ const SettingsApi = ({ apikey, generateKey, loader, isCopied, onCopy }) => (
         {apikey ? 'Regenerate' : 'Generate'} key
       </Button>
     </ApiKeyWrapper>
-    <Link href="https://github.com/IOSD" title="API Docs" target="_blank">
+    <Link href="https://github.com/sarthak0906/url-shortner" title="API Docs" target="_blank">
       Read API docs
     </Link>
   </Wrapper>

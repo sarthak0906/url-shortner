@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
         {
-            name: 'Kutt',
+            name: 'ulr shortner',
             script: 'server/server.js',
             env: {
                 NODE_ENV: 'production',

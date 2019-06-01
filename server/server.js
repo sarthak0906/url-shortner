@@ -46,7 +46,7 @@ app.prepare().then(() => {
   if (process.env.NODE_ENV !== 'production') {
     server.use(morgan('dev'));
   }
-  server.use(cookieParser());
+  // server.use(cookieParser());
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
   server.use(passport.initialize());
@@ -76,11 +76,11 @@ app.prepare().then(() => {
     app.render(req, res, '/verify', req.user)
   );
 
-  // Disabled service worker because of multiple requests
-  // Resulting in duplicated visist count
-  server.get('/sw.js', (_req, res) => {
-    res.sendFile(`${__dirname}/offline/sw.js`);
-  });
+  // // Disabled service worker because of multiple requests
+  // // Resulting in duplicated visist count
+  // server.get('/sw.js', (_req, res) => {
+  //   res.sendFile(`${__dirname}/offline/sw.js`);
+  // });
 
   /* User and authentication */
   server.post('/api/auth/signup', validationCriterias, validateBody, catchErrors(auth.signup));
@@ -119,7 +119,7 @@ app.prepare().then(() => {
     switch (req.pageType) {
       case 'password':
         return app.render(req, res, '/url-password', req.protectedUrl);
-      case 'info':
+      // case 'info':
       default:
         return app.render(req, res, '/url-info', req.urlTarget);
     }

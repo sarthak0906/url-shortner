@@ -1,34 +1,26 @@
 {
-  "name": "iosd-url-shortner",
+  "name": "url-shortner",
   "version": "1.0.0",
   "description": "Modern URL shortener.",
   "main": "./server/server.js",
   "scripts": {
-    "test": "mocha --compilers js:@babel/register ./client/**/__test__/*.js",
     "dev": "nodemon ./server/server.js",
     "build": "build ./client",
-    "start": "NODE_ENV=production node ./server/server.js",
-    "lint": "./node_modules/.bin/eslint . --fix",
-    "lint:nofix": "./node_modules/.bin/eslint ."
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:nofix"
-    }
+    "start": "node ./server/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IOSD"
+    "url": "git+https://github.com/sarthak0906/url-shortner"
   },
   "keywords": [
     "url-shortener"
   ],
-  "author": "IOSD",
+  "author": "Sarthak",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IOSD"
+    "url": "https://github.com/sarthak0906/url-shortner"
   },
-  "homepage": "https://github.com/IOSD",
+  "homepage": "https://github.com/sarthak0906/url-shortner",
   "dependencies": {
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
